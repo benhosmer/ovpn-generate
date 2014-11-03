@@ -4,10 +4,12 @@ ovpn-generate
 A python script that generates an .ovpn file after building client keys.
 
 You can build client keys with OpenVPN:
+
     . /etc/openvpn/easy-rsa/2.0/vars
     . /etc/openvpn/easy-rsa/2.0/build-key client
 
 You can remove client access:
+
     . /etc/openvpn/easy-rsa/2.0/vars
     . /etc/openvpn/easy-rsa/2.0/revoke-full client
 
