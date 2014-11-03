@@ -1,0 +1,27 @@
+client
+
+dev tun
+proto tcp
+remote {{servername}}
+
+resolv-retry infinite
+nobind
+
+persist-key
+persist-tun
+
+verb 1
+
+keepalive 10 900
+inactive 3600
+comp-lzo
+
+<ca>
+{{cacert}}
+</ca>
+<cert>
+{{usercert}}
+</cert>
+<key>
+{{userkey}}
+</key>
