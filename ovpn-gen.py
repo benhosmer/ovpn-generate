@@ -3,6 +3,10 @@
 
 from jinja2 import Template
 import sys
+'''Generate an .ovpn file from a set of user keys
+to be used with an ovpn client.
+'''
+
 '''
 cd /etc/openvpn/easy-rsa
 source ./vars
@@ -20,10 +24,11 @@ try:
 except:
   print 'Error: Need an ip and port "12.34.56.78 1194"'
   sys.exit()
-ca = 'keys/ca.crt'
-usercert = 'keys/' + username + '/' + username + '.crt'
-userkey = 'keys/' + username + '/' + username + '.key'
-userovpn = 'keys/' + username + '.ovpn'
+#'/etc/openvpn/easy-rsa'
+ca = '/etc/openvpn/easy-rsa/keys/ca.crt'
+usercert = '/etc/openvpn/easy-rsa/keys/' + username + '.crt'
+userkey = '/etc/openvpn/easy-rsa/keys/' + username + '.key'
+userovpn = '~/' + username + '.ovpn'
 
 with open('templates/ovpn.template') as ovpntemplate, \
         open(usercert) as certfile, \
@@ -37,5 +42,4 @@ with open('templates/ovpn.template') as ovpntemplate, \
   outfile.write(model.render(usercert=certvalue, userkey=keyvalue, cacert=cavalue, servername=server))
   print model.render(usercert=certvalue, userkey=keyvalue, cacert=cavalue, servername=server)
   print 'OVPN file generated:' + username + '.ovpn'
-
 
