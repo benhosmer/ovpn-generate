@@ -7,12 +7,6 @@ import sys
 to be used with an ovpn client.
 '''
 
-'''
-cd /etc/openvpn/easy-rsa
-source ./vars
-./build-key username
-'''
-
 try:
   username = sys.argv[1]
 except:
@@ -28,7 +22,7 @@ except:
 ca = '/etc/openvpn/easy-rsa/keys/ca.crt'
 usercert = '/etc/openvpn/easy-rsa/keys/' + username + '.crt'
 userkey = '/etc/openvpn/easy-rsa/keys/' + username + '.key'
-userovpn = '~/' + username + '.ovpn'
+userovpn = username + '.ovpn'
 
 with open('templates/ovpn.template') as ovpntemplate, \
         open(usercert) as certfile, \
