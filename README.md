@@ -16,6 +16,7 @@ You can remove client access:
 After generating new client keys, you can read them all at once and
 populate the .ovpn file:
 
+    # cp /etc/openvpn/easy-rsa/keys/client.* keys/
     # python ovpn-gen client 123.456.78.90 1194
 
 A client.ovpn file will then be created. Distribute this to your user
