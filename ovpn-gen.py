@@ -19,9 +19,9 @@ except:
   print 'Error: Need an ip and port "12.34.56.78 1194"'
   sys.exit()
 #'/etc/openvpn/easy-rsa'
-ca = '/etc/openvpn/easy-rsa/keys/ca.crt'
-usercert = '/etc/openvpn/easy-rsa/keys/' + username + '.crt'
-userkey = '/etc/openvpn/easy-rsa/keys/' + username + '.key'
+ca = 'keys/ca.crt'
+usercert = 'keys/' + username + '.crt'
+userkey = 'keys/' + username + '.key'
 userovpn = username + '.ovpn'
 
 with open('templates/ovpn.template') as ovpntemplate, \
