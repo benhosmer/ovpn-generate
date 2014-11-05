@@ -17,7 +17,7 @@ After generating new client keys, you can read them all at once and
 populate the .ovpn file:
 
     # cp /etc/openvpn/easy-rsa/keys/client.* keys/
-    # python ovpn-gen.py client 123.456.78.90 1194
+    # python ovpn-gen.py client "123.456.78.90 1194" **Use quotes on ip and port**
 
 A client.ovpn file will then be created. Distribute this to your user
 and they can connect to the VPN server.
