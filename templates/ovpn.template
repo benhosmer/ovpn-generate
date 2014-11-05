@@ -17,11 +17,9 @@ inactive 3600
 comp-lzo
 
 <ca>
-{{cacert}}
-</ca>
+{{cacert}}</ca>
 <cert>
-{{usercert}}
-</cert>
+{{usercert}}</cert>
 <key>
-{{userkey}}
-</key>
+{{userkey}}</key>
+
